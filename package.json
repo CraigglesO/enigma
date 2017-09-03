@@ -1,11 +1,38 @@
 {
   "name": "enigma",
-  "version": "1.0.0",
-  "description": "The WWII enigma crypto machine",
-  "main": "enigma.js",
+  "version": "1.0.4",
+  "description": "When creating new modules, use this skeletal structure",
+  "main": "./lib/enigma.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint+build+test": "yarn run lint && yarn run build && yarn run test",
+    "lint": "echo linting... && eslint ./src/**/*.js && echo 'successfully linted'",
+    "build": "echo building... && babel src/ -d lib/ && echo 'successfully built'",
+    "prepublish": "yarn run build",
+    "test": "echo running server tests... && tape test/**/*.js && echo 'successfully completed tests'"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CraigglesO/enigma.git"
+  },
+  "author": "Craig OConnor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CraigglesO/enigma/issues"
+  },
+  "homepage": "https://github.com/CraigglesO/enigma#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.0.0",
+    "flow-bin": "^0.48.0",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "extend": "^3.0.1"
+  }
 }
