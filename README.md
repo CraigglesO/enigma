@@ -2,10 +2,10 @@
 
 [travis-image]: https://travis-ci.org/CraigglesO/enigma.svg?branch=master
 [travis-url]: https://travis-ci.org/CraigglesO/enigma
-[npm-image]: https://img.shields.io/npm/v/CraigglesO/enigma.svg
-[npm-url]: https://npmjs.org/package/enigma
-[downloads-image]: https://img.shields.io/npm/dm/enigma.svg
-[downloads-url]: https://npmjs.org/package/enigma
+[npm-image]: https://img.shields.io/npm/v/CraigglesO/enigma-2017.svg
+[npm-url]: https://npmjs.org/package/enigma-2017
+[downloads-image]: https://img.shields.io/npm/dm/enigma-2017.svg
+[downloads-url]: https://npmjs.org/package/enigma-2017
 
 ## About
 

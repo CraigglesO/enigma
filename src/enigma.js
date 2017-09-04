@@ -8,12 +8,12 @@ const NUM_CHAR = {
 	"9":"J", "10":"K", "11":"L", "12":"M", "13":"N", "14":"O", "15":"P", "16":"Q",
 	"17":"R", "18":"S", "19":"T", "20":"U", "21":"V", "22":"W", "23":"X", "24":"Y",
 	"25":"Z"
-}
+};
 const CHAR_NUM = {
   "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7, "I": 8, "J": 9,
   "K": 10, "L": 11, "M": 12, "N": 13, "O": 14, "P": 15, "Q": 16, "R": 17, "S": 18,
   "T": 19, "U": 20, "V": 21, "W": 22, "X": 23, "Y": 24, "Z": 25
-}
+};
 const ROTOR_SIZE = 26;
 
 type Rotor = {
@@ -33,7 +33,7 @@ type Options = {
   rotors:    Array<RotorOptions>,
   plugboard: Array<string>,
   reflector: string,
-  spacing:   number
+  spacing?:  number
 }
 
 const defaultOptions = {
@@ -48,8 +48,7 @@ const defaultOptions = {
     "EF",
     "GH"
   ],
-  reflector: "B",
-  spacing: 4
+  reflector: "B"
 };
 
 class Enigma {
@@ -83,7 +82,9 @@ class Enigma {
   }
 
   plugB(c: number): number {
-    return this.plugboard[c] || c;
+    if (c in this.plugboard)
+      return this.plugboard[c]
+    return c;
   }
 }
 
@@ -106,6 +107,8 @@ class Rotors {
   }
 
   rotate(r: Rotor, index: number = 0) {
+    if (!r)
+      return;
     r.position = (r.position + 1) % ROTOR_SIZE;
     if (r.position === r.step[0] || r.position === r.step[1])
       this.rotate(this.rotors[index+1], index+1);

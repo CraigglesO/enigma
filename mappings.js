@@ -1,4 +1,4 @@
-const rotorOptions = require('./settings/rotor.json');
+const reflectorOptions = require('./settings/reflector.json');
 
 const CHAR_NUM = {
   "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7, "I": 8, "J": 9,
@@ -8,8 +8,9 @@ const CHAR_NUM = {
 
 let res = [];
 
-rotorOptions["I"]._map.split('').forEach((char, i) => {
-  res[CHAR_NUM[char]] = i;
+let C = reflectorOptions["C_FLAT"];
+Object.keys(C).forEach((num, i) => {
+  res[num] = C[num];
 });
 // let res = rotorOptions;
 
