@@ -6,14 +6,7 @@ let enigma = new Enigma();
 let c = enigma.encode("TEST");
 console.log("encrypted text", c);
 
-// console.log("ENIGMA", util.inspect(enigma, false, null));
-//
-// enigma = new Enigma();
-//
-// let m = enigma.decode(c);
-// console.log("decrypt text", m);
+enigma = new Enigma();
 
-// console.log("ENIGMA", util.inspect(enigma, false, null));
-
-// OZHFXRHRHAMENAUWEIGSUXE
-// OZHFXRHRHAMENAUWEIGSUXE
+let m = enigma.decode(c);
+console.log("decrypt text", m);

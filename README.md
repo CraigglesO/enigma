@@ -3,14 +3,14 @@
 [travis-image]: https://travis-ci.org/CraigglesO/enigma.svg?branch=master
 [travis-url]: https://travis-ci.org/CraigglesO/enigma
 [npm-image]: https://img.shields.io/npm/v/CraigglesO/enigma.svg
-[npm-url]: https://npmjs.org/package/CraigglesO/enigma
-[downloads-image]: https://img.shields.io/npm/dm/CraigglesO/enigma.svg
-[downloads-url]: https://npmjs.org/package/CraigglesO/enigma
+[npm-url]: https://npmjs.org/package/enigma
+[downloads-image]: https://img.shields.io/npm/dm/enigma.svg
+[downloads-url]: https://npmjs.org/package/enigma
 
 ## About
 
-http://www.codesandciphers.org.uk/enigma/index.htm
-http://enigmaco.de/enigma/enigma.html
+* http://www.codesandciphers.org.uk/enigma/index.htm
+* http://enigmaco.de/enigma/enigma.html
 
 `git clone https://github.com/CraigglesO/enigma.git`
 
