@@ -6,7 +6,11 @@ const CHAR_NUM = {
   "T": 19, "U": 20, "V": 21, "W": 22, "X": 23, "Y": 24, "Z": 25
 }
 
-let res = rotorOptions["III"]._rev_map.split('').map(char => CHAR_NUM[char]);
+let res = [];
+
+rotorOptions["I"]._map.split('').forEach((char, i) => {
+  res[CHAR_NUM[char]] = i;
+});
 // let res = rotorOptions;
 
 console.log("res", JSON.stringify(res));

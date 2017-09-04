@@ -72,17 +72,8 @@ class Enigma {
       // run through 'components'
       // m->plugboard->rotors->reflector->reverse-rotors->plugboard->c
       let c = this.plugB(CHAR_NUM[m[i]]);
-      c = this.rotors.input(c).forward().reflect().reverse();
+      c     = this.rotors.input(c).forward().reflect().reverse();
       ciphertext += NUM_CHAR[this.plugB(c)];
-      console.log("");
-      console.log("");
-      console.log("");
-      console.log("");
-      console.log("NEXT");
-      console.log("");
-      console.log("");
-      console.log("");
-      console.log("");
     }
     return ciphertext;
   }
@@ -101,7 +92,7 @@ class Rotors {
   reflector: Array<number>;
   c:         number;
   constructor(rotors: Array<Rotor>, reflector: string) {
-    this.rotors    = rotors.map(rotor => extend(rotor, rotorOptions[rotor.type]));
+    this.rotors    = rotors.map(rotor => extend(rotorOptions[rotor.type], rotor));
     this.reflector = reflectorOptions[reflector];
   }
 
@@ -115,7 +106,6 @@ class Rotors {
   }
 
   rotate(r: Rotor, index: number = 0) {
-    console.log("ROTATE", index);
     r.position = (r.position + 1) % ROTOR_SIZE;
     if (r.position === r.step[0] || r.position === r.step[1])
       this.rotate(this.rotors[index+1], index+1);
@@ -123,27 +113,22 @@ class Rotors {
 
   forward(): Rotors {
     this.rotors.forEach(rotor => {
-      console.log("rotate-before", this.c);
       this.c = rotor.map[(this.c + rotor.position) % ROTOR_SIZE];
-      console.log("rotate-after", this.c);
+      this.c = modulo(this.c - rotor.position, ROTOR_SIZE);
     });
-    console.log("");
     return this;
   }
 
   reverse(): number {
     this.rotors.reverse().forEach(rotor => {
-      console.log("reverse-rotate-before", this.c);
       this.c = rotor.rev_map[(this.c + rotor.position) % ROTOR_SIZE];
-      console.log("reverse-rotate-after", this.c);
+      this.c = modulo(this.c - rotor.position, ROTOR_SIZE);
     });
     this.rotors.reverse();
-    console.log("");
     return this.c;
   }
 
   reflect(): Rotors {
-    console.log("REFLECT");
     this.c = this.reflector[this.c];
     return this;
   }
@@ -157,6 +142,10 @@ function setupPlugBoard(input: Array<string>): { [key: number]: number } {
     r[p1] = p0;
   });
   return r;
+}
+
+function modulo(n, m) {
+  return ((n % m) + m) % m;
 }
 
 export default Enigma;

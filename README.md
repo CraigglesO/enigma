@@ -2,18 +2,17 @@
 
 [travis-image]: https://travis-ci.org/CraigglesO/enigma.svg?branch=master
 [travis-url]: https://travis-ci.org/CraigglesO/enigma
-[npm-image]: https://img.shields.io/npm/v/@polkajs/enigma.svg
-[npm-url]: https://npmjs.org/package/@polkajs/enigma
-[downloads-image]: https://img.shields.io/npm/dm/@polkajs/enigma.svg
-[downloads-url]: https://npmjs.org/package/@polkajs/enigma
+[npm-image]: https://img.shields.io/npm/v/CraigglesO/enigma.svg
+[npm-url]: https://npmjs.org/package/CraigglesO/enigma
+[downloads-image]: https://img.shields.io/npm/dm/CraigglesO/enigma.svg
+[downloads-url]: https://npmjs.org/package/CraigglesO/enigma
 
 ## About
 
-**Create new modules with this skeleton**
+http://www.codesandciphers.org.uk/enigma/index.htm
+http://enigmaco.de/enigma/enigma.html
 
 `git clone https://github.com/CraigglesO/enigma.git`
-
-`git remote rm origin`
 
 ---
 
